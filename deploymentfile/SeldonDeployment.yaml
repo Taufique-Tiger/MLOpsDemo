@@ -1,0 +1,19 @@
+apiVersion: machinelearning.seldon.io/v1
+kind: SeldonDeployment
+metadata:
+  name: iris
+  namespace: seldon
+spec:
+  predictors:
+  - name: default
+    graph:
+      implementation: SKLEARN_SERVER
+      modelUri: azureblob:democontainer/demodata
+      name: classifier
+      storageInitializerImage: seldonio/rclone-storage-initializer:1.15.0-dev  # Specify custom image here
+      envSecretRefName: secret
+      parameters:
+        - name: method
+          type: STRING
+          value: predict
+    replicas: 1
