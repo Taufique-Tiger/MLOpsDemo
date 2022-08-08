@@ -8,15 +8,16 @@ spec:
 
   source:
     repoURL: https://github.com/Taufique-Tiger/MLOpsDemo.git
-    targetRevision: main
+    targetRevision: HEAD
     path: deploymentfile
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: default
 
     syncPolicy:
       syncOptions:
-      - CreateNamespace=true
+        - CreateNamespace=true
+        - Validate=false
 
       automated:
         selfHeal: true
