@@ -12,13 +12,12 @@ spec:
     path: deploymentfile
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: irismodel
 
-    syncPolicy:
-      syncOptions:
-        - CreateNamespace=true
-        - Validate=false
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
 
-      automated:
-        selfHeal: true
-        prune: true
+    automated:
+      selfHeal: true
+      prune: true
