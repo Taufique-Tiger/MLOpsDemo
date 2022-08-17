@@ -7,7 +7,7 @@ spec:
   predictors:
     - name: default
       graph:
-        implementation: STO_SERVER
+        implementation: SKLEARN_SERVER
         modelUri: azureblob:testig/testdata
         name: classifier
         storageInitializerImage: seldonio/rclone-storage-initializer:1.15.0-dev
