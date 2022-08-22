@@ -10,10 +10,11 @@ spec:
         implementation: STO_SERVER
         modelUri: azureblob:testig/testdata
         name: classifier
+        serviceAccountName: acr-connect
         storageInitializerImage: seldonio/rclone-storage-initializer:1.15.0-dev
         envSecretRefName: secret
         parameters:
           - name: method
             type: STRING
             value: predict
-      replicas: 3
+      replicas: 4
