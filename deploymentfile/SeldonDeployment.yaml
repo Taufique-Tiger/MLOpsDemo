@@ -17,4 +17,4 @@ spec:
           - name: method
             type: STRING
             value: predict
-      replicas: 4
+      replicas: 1
